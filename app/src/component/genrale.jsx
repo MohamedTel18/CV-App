@@ -57,8 +57,8 @@ function General({data , onUpdate}) {
                     </div>
 
                     <div className="button-group">
-                        <button onClick={handleSubmit}>Save</button>
-                        <button onClick={() => setIsEditing(false)}>Cancel</button>
+                        <button className="submit-btn" onClick={handleSubmit}>Save</button>
+                        <button className="cancel-btn" onClick={() => setIsEditing(false)}>Cancel</button>
                     </div>
                 </div>
             ) : (
@@ -78,7 +78,7 @@ function General({data , onUpdate}) {
                         </div>
                     </div>
                     ) : (
-                        <p className="no-data">No general information added yet.</p>
+                        alert("No general information added yet.")
                     )}
           
                     <button className="edit-btn" onClick={handleEdit}>
