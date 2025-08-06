@@ -1,6 +1,7 @@
 import { useState } from "react";
-
-function General({data , onUpdate}) {
+import "@/styles/general.css";
+ // Assuming you have a CSS file for styling
+export default function General({data , onUpdate}) {
 
     const [isEditing, setIsEditing] = useState(false);
     const [formData, setFormData] = useState(data);
