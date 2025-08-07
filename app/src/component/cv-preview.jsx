@@ -68,10 +68,19 @@ export default function CVPreview({
     window.print()
   }
 
+  const handleBackClick = () => {
+    console.log('Back button clicked, onBackToEdit:', onBackToEdit)
+    if (onBackToEdit) {
+      onBackToEdit()
+    } else {
+      console.error('onBackToEdit function not provided')
+    }
+  }
+
   return (
     <div className="cv-preview-container">
       <div className="cv-actions">
-        <button className="back-btn" onClick={onBackToEdit}>
+        <button className="back-btn" onClick={handleBackClick}>
           ← Back to Edit
         </button>
         <div className="action-buttons">

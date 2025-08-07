@@ -18,7 +18,7 @@ export default function Education({data, onUpdate})
     };
 
     const addEducation = () => {
-        setFormData([...formData, { school: "", title: "", year: "" }]);
+        setFormData([...formData, { schoolName: "", titleOfStudy: "", dateOfStudy: "" }]);
     };
 
     const saveChanges = () => {
@@ -48,8 +48,8 @@ export default function Education({data, onUpdate})
                                 <input
                                     type="text"
                                     id={`school-${index}`}
-                                    value={edu.school}
-                                    onChange={(e) => handleInputChange(index, "school", e.target.value)}
+                                    value={edu.schoolName}
+                                    onChange={(e) => handleInputChange(index, "schoolName", e.target.value)}
                                     placeholder="Enter school name"
                                 />
                             </div>
@@ -58,8 +58,8 @@ export default function Education({data, onUpdate})
                                 <input
                                     type="text"
                                     id={`title-${index}`}
-                                    value={edu.title}
-                                    onChange={(e) => handleInputChange(index, "title", e.target.value)}
+                                    value={edu.titleOfStudy}
+                                    onChange={(e) => handleInputChange(index, "titleOfStudy", e.target.value)}
                                     placeholder="Enter degree"
                                 />
                             </div>
@@ -68,8 +68,8 @@ export default function Education({data, onUpdate})
                                 <input
                                     type="date"
                                     id={`year-${index}`}
-                                    value={edu.year}
-                                    onChange={(e) => handleInputChange(index, "year", e.target.value)}
+                                    value={edu.dateOfStudy}
+                                    onChange={(e) => handleInputChange(index, "dateOfStudy", e.target.value)}
                                     placeholder="Enter graduation date"
                                 />
                             </div>
@@ -95,14 +95,14 @@ export default function Education({data, onUpdate})
                     <div className="education-list">
                         {data.map((edu, index) => (
                             <div key={index} className="education-item">
-                                <h3>{edu.title}</h3>
-                                <p><strong>School:</strong> {edu.school}</p>
-                                <p><strong>Graduation Date:</strong> {edu.year}</p>
+                                <h3>{edu.titleOfStudy}</h3>
+                                <p><strong>School:</strong> {edu.schoolName}</p>
+                                <p><strong>Graduation Date:</strong> {edu.dateOfStudy}</p>
                             </div>
                         ))}
                     </div>
                     ) : (
-                        alert("No education information available.")
+                        <p className="no-data-message">No education information available.</p>
                     )}
 
                     <button className="edit-btn" onClick={handleEdit}>

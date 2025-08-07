@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "@/styles/general.css";
+import "@/styles/generale.css";
  // Assuming you have a CSS file for styling
 export default function General({data , onUpdate}) {
 
@@ -9,6 +9,10 @@ export default function General({data , onUpdate}) {
     const handleSubmit = () => {
         onUpdate(formData);
         setIsEditing(false);
+    }
+
+    const handleEdit = () => {
+        setIsEditing(true);
     }
 
     const handleInputChange = (field, value) => {
@@ -79,7 +83,7 @@ export default function General({data , onUpdate}) {
                         </div>
                     </div>
                     ) : (
-                        alert("No general information added yet.")
+                        <p className="no-data-message">No general information added yet.</p>
                     )}
           
                     <button className="edit-btn" onClick={handleEdit}>
